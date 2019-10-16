@@ -199,3 +199,26 @@ describe('Negative numbers', function() {
         assert.strictEqual(rounded, expectedRounded)
     })
 })
+
+describe('Decimal separator', function(){
+    it('use default separator when nothing provided', function(){
+        const input = new BN('1200')
+        const decimals = new BN('3')
+        const roundToDecimals = new BN('3')
+        const expectedPrecise = '1.200'
+        const expectedRounded = '1.200'
+        const {precise, rounded} = bnToString(input, decimals, roundToDecimals)
+        assert.strictEqual(precise, expectedPrecise)
+        assert.strictEqual(rounded, expectedRounded)
+    })
+    it('uses provided separator', function(){
+        const input = new BN('1200')
+        const decimals = new BN('3')
+        const roundToDecimals = new BN('3')
+        const expectedPrecise = '1,200'
+        const expectedRounded = '1,200'
+        const {precise, rounded} = bnToString(input, decimals, roundToDecimals, ',')
+        assert.strictEqual(precise, expectedPrecise)
+        assert.strictEqual(rounded, expectedRounded)
+    })
+})
