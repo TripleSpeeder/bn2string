@@ -38,9 +38,13 @@ function bnToDisplayString(bignumber, decimals, roundToDecimals, decimalSeparato
     if (decimals>0) {
         preciseString +=`${decimalSeparator}${preciseFraction.toString(10, decimals)}`
     }
+    let roundedString = `${roundedInteger.toString(10).replace(/(\d)(?=(\d{3})+(?!\d))/g, groupSeparator)}`
+    if (roundToDecimals > 0) {
+        roundedString += `${decimalSeparator}${roundedFraction.toString(10, roundToDecimals)}`
+    }
     return {
         precise: preciseString,
-        rounded: `${roundedInteger.toString(10).replace(/(\d)(?=(\d{3})+(?!\d))/g, groupSeparator)}${decimalSeparator}${roundedFraction.toString(10, roundToDecimals)}`,
+        rounded: roundedString,
     }
 }
 

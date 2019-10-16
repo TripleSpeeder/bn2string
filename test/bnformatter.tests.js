@@ -165,6 +165,14 @@ describe('Rounding', function() {
         const {precise, rounded} = bnToString(input, decimals, roundToDecimals)
         assert.strictEqual(rounded, '1.0')
     })
+    it('rounds to 0 decimal places', function() {
+        const input = new BN('1009')
+        const decimals = new BN('2')
+        const roundToDecimals = new BN('0')
+        const {precise, rounded} = bnToString(input, decimals, roundToDecimals)
+        assert.strictEqual(precise, '10.09')
+        assert.strictEqual(rounded, '10')
+    })
 })
 
 describe('Negative numbers', function() {
