@@ -3,7 +3,7 @@ Provide ready-to-use display strings for BN.js instances.
 
 ## Usage
 Assume we have a balance of around 12500 Tether (USDT) tokens. USDT is specified with 6 decimals.
-For display in a GUI we want to have the human-readable USDT value, rounded to 2 decimals and in full precision.
+For display in a GUI we want to have the human-readable USDT value, both rounded to 2 decimals and in full precision.
 
 ```javascript
 var BN = require('bn.js')
