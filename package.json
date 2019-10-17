@@ -1,13 +1,20 @@
 {
   "name": "@triplespeeder/bn2string",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Provide full precision and rounded display string for BN.js instances",
   "repository": "https://github.com/TripleSpeeder/bn2string",
   "main": "index.js",
   "scripts": {
     "test": "mocha --exit"
   },
-  "keywords": [],
+  "keywords": [
+    "BN",
+    "BigNumber",
+    "ERC20",
+    "Ethereum",
+    "Token",
+    "web3"
+  ],
   "author": "Michael Bauer",
   "license": "MIT",
   "dependencies": {
